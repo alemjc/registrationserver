@@ -20,7 +20,7 @@ import (
 
 const (
 	hostname = "localhost"
-	port     = "8080"
+	port     = "5000"
 )
 
 func econdeUser(user User, w io.Writer) error {
@@ -101,7 +101,7 @@ func registerUser(w http.ResponseWriter, r *http.Request, ds *firebase.App) {
 	authenticator, err := ds.Auth(ctx)
 
 	if err != nil {
-		http.Error(w, "Could not authenticate user", http.StatusInternalServerError)
+		http.Error(w, "Could not create user", http.StatusInternalServerError)
 		return
 	}
 
@@ -113,7 +113,7 @@ func registerUser(w http.ResponseWriter, r *http.Request, ds *firebase.App) {
 	u, err := authenticator.CreateUser(ctx, params)
 
 	if err != nil {
-		http.Error(w, "Unable to create user", http.StatusInternalServerError)
+		http.Error(w, fmt.Sprintf("Unable to create user, %v", err), http.StatusInternalServerError)
 		return
 	}
 
