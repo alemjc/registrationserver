@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
             val textView = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.layout, parent, false) as CheckedTextView
+                    .inflate(R.layout.workout_selection, parent, false) as CheckedTextView
 
             return ViewHolder(textView)
         }
