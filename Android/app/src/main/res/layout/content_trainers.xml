@@ -8,4 +8,9 @@
     tools:context="com.apps.alemjc.gymdemo.TrainersActivity"
     tools:showIn="@layout/activity_trainers">
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/trainers">
+    </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>
