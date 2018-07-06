@@ -4,13 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.GridLayout
-import android.widget.TextView
+import android.widget.*
 
 import kotlinx.android.synthetic.main.activity_trainers.*
 import kotlinx.android.synthetic.main.content_trainers.*
@@ -28,7 +29,7 @@ class TrainersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trainers)
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
         val twoHoursInMilli = 7200000
 //      For testing
         val trainersList = listOf(Trainer("Robin", "I love working out and I am 24 years old", "Chest/Biceps", Date(), Date(Date().time + twoHoursInMilli)),
@@ -37,6 +38,7 @@ class TrainersActivity : AppCompatActivity() {
         val recyclerAdapter = MyRecyclerAdapter(this, trainersList)
 
         trainers.adapter = recyclerAdapter
+        trainers.layoutManager = LinearLayoutManager(this)
     }
 
     private class MyRecyclerAdapter(val ctx: Context, val trainers: List<Trainer>): RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>() {
@@ -53,11 +55,16 @@ class TrainersActivity : AppCompatActivity() {
             val trainer = trainers[position]
             val name = holder.view.findViewById(R.id.name) as TextView
             val about = holder.view.findViewById(R.id.aboutme) as TextView
-            val availabilityTable = holder.view.findViewById(R.id.availability) as GridLayout
+            val workoutPlan = holder.view.findViewById(R.id.workoutplan) as TextView
+            val availabilityTable = holder.view.findViewById(R.id.availability) as TableLayout
             val intent = Intent()//TODO: link this intent to the next activity
 
             name.text = trainer.name
             about.text = trainer.aboutMe
+            workoutPlan.text = ctx.getString(R.string.workout_plan_text).format(trainer.workoutPlan)
+            var count = 0
+            var tableRow = TableRow(ctx)
+            tableRow.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT)
 
             var currentTime = Date(trainer.strtAvailableTime.time)
 
@@ -65,8 +72,8 @@ class TrainersActivity : AppCompatActivity() {
 
                 val tempEndTime = Date(currentTime.time + FOURTY_MINUTES_TO_MILLISECONDS)
 
-                val smplDateFmt = SimpleDateFormat("HH.mm", Locale.US)
-                val buttonView = Button(ctx)
+                val smplDateFmt = SimpleDateFormat("HH:mm", Locale.US)
+                val buttonView = Button(ContextThemeWrapper(ctx, R.style.PrimaryFlatButton))
                 val startTimeStr = smplDateFmt.format(currentTime)
                 val endTimeStr = smplDateFmt.format(tempEndTime)
 
@@ -80,14 +87,23 @@ class TrainersActivity : AppCompatActivity() {
                     ctx.startActivity(intent, bundle)
                 }
 
-                availabilityTable.addView(buttonView, ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT))
+                tableRow.addView(buttonView)
+                count++
 
                 currentTime = Date(tempEndTime.time + TEN_MINUTES_TO_MILLISECONDS)
+
+                if (count == 4 || currentTime.after(trainer.endAvailableTime)){
+                    availabilityTable.addView(tableRow, TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT))
+                    tableRow = TableRow(ctx)
+                    tableRow.layoutParams = TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT)
+                    count = 0
+                }
 
             }
         }
 
         override fun getItemCount(): Int {
+
             return trainers.size
         }
     }

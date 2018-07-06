@@ -9,22 +9,6 @@
     android:layout_gravity="center_horizontal"
     tools:context=".SlidingActivity">
 
-    <!--
-    This [handler2] button is just a placeholder for when user selects the gym they want to go to
-    -->
-    <Button
-        android:id="@+id/handler2"
-        android:text="Second Handler"
-        android:onClick="toggleDrawerState"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!--I don't know how to set the max height of the drawer-->
     <SlidingDrawer
         android:id="@+id/drawer"

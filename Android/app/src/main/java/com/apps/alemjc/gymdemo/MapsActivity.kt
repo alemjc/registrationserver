@@ -8,11 +8,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import android.util.Log
+import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.sliding.*
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -21,6 +23,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     companion object {
         const val PERMISSION_CHECK = 1
+        val SAMPLE_DATA = listOf(LatLng(40.5863845, -74.4491746), LatLng(39.9759849, -74.2517769),
+                                            LatLng(40.7913549, -74.3272861))
     }
 
 
@@ -32,9 +36,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        val intent = Intent(this, TrainersActivity::class.java)
 
+        privateSessionButton.setOnClickListener {
+            startActivity(intent) }
+        groupSessionButton.setOnClickListener {
+            startActivity(intent) }
 
+    }
 
+    fun arePositionsEquals(marker1:LatLng, marker2: LatLng): Boolean {
+        return marker1.longitude == marker2.longitude && marker1.latitude == marker2.latitude
+    }
+
+    override fun onBackPressed() {
+
+        if (drawer.isOpened()){
+            drawer.close()
+            return
+        }
+
+        super.onBackPressed()
     }
 
     /**
@@ -48,28 +70,40 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        val ctx = this
+
+        mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+
 
         val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED){
+
             val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-            val gymOne = MarkerOptions().position(LatLng(location.latitude+20, location.longitude))
-            val gymTwo = MarkerOptions().position(LatLng(location.latitude, location.longitude+20))
-            val gymThree = MarkerOptions().position(LatLng(location.latitude+20, location.longitude+20))
+            val yourLocation = MarkerOptions().position(LatLng(location.latitude, location.longitude))
+            val gymOne = MarkerOptions().position(SAMPLE_DATA[0])
+            val gymTwo = MarkerOptions().position(SAMPLE_DATA[1])
+            val gymThree = MarkerOptions().position(SAMPLE_DATA[2])
+
+            val cameraPosition = CameraPosition.Builder().target(yourLocation.position)
+                    .zoom(8f)
+                    .build()
 
             mMap.addMarker(gymOne)
             mMap.addMarker(gymTwo)
             mMap.addMarker(gymThree)
 
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
 
-            mMap.setOnMarkerClickListener { _ ->
-//              TODO: make the intent call Josiahs activity
-                val intent = Intent(ctx, MapsActivity::class.java)
-                startActivity(intent)
 
-                true
+            mMap.setOnMarkerClickListener  { marker: Marker? ->
+
+                if(marker != null && (arePositionsEquals(marker.position, gymOne.position) || arePositionsEquals(marker.position, gymTwo.position)
+                                || arePositionsEquals(marker.position, gymThree.position))){
+                    drawer.open()
+                }
+
+                false
             }
 
         }
