@@ -24,10 +24,5 @@ public class LoginActivity extends AppCompatActivity{
         Intent intent = new Intent(this, WorkoutRoutine.class);
         startActivity(intent);
     }
-//    I created this just to jump to the map activity
-    public void startSlidingActivity(View view) {
-        Intent intent = new Intent(this, SlidingActivity.class);
-        startActivity(intent);
-    }
 }
 
