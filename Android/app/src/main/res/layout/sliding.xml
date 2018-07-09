@@ -11,62 +11,60 @@
     android:elevation="10dp"
     android:orientation="vertical"
     >
-    <SlidingDrawer android:id="@+id/drawer"
+
+    <SlidingDrawer
+        android:id="@+id/drawer"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:handle="@+id/handle"
-        android:content="@+id/content">
+        android:content="@+id/content"
+        android:handle="@+id/handle">
 
         <EditText
             android:id="@id/handle"
             android:layout_width="1dp"
             android:layout_height="1dp"
-            android:inputType="text"/>
+            android:inputType="text" />
 
         <LinearLayout
+            android:id="@id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@id/content"
             android:background="@color/textIcons"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:text="@string/choose_workout_session_type"
                 android:textAlignment="center"
-                android:textStyle="bold"
-                android:layout_margin="10dp"
-                android:textAppearance="@android:style/TextAppearance.Material.Small"/>
+                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                android:textStyle="bold" />
 
             <LinearLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                >
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
                     android:gravity="center"
-                    >
+                    android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/privateSessionButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:id="@+id/privateSessionButton"
-                        android:src="@mipmap/ic_person_round"
-                        />
+                        android:src="@mipmap/ic_person_round" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Private Session"/>
+                        android:text="Private Session" />
 
                 </LinearLayout>
 
@@ -75,25 +73,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/groupSessionButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
-                        android:id="@+id/groupSessionButton"
-                        android:src="@mipmap/ic_people_round"
-                        />
+                        android:src="@mipmap/ic_people_round" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Group Session"/>
+                        android:text="Group Session" />
 
                 </LinearLayout>
-
-
 
 
             </LinearLayout>
