@@ -23,7 +23,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="trainer_name">Robin Zhang</string>
+    <string name="trainer_name">Robin Zhang, 23</string>
     <string name="trainer_about_me">I like working out.</string>
     <string name="select_trainer">Workout with me!</string>
 
