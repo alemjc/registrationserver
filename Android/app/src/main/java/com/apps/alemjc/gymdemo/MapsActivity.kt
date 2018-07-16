@@ -56,8 +56,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        //val intent = Intent(this, TrainersActivity::class.java)
-        val intent = Intent(this, TrainerProfileActivity::class.java) // For testing trainer profile activity
+         cval intent = Intent(this, TrainersActivity::class.java)
+        //val intent = Intent(this, TrainerProfileActivity::class.java) // For testing trainer profile activity
 
         privateSessionButton.setOnClickListener {
             startActivity(intent) }

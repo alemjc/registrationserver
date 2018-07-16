@@ -57,7 +57,7 @@ class TrainersActivity : AppCompatActivity() {
             val about = holder.view.findViewById(R.id.aboutme) as TextView
             val workoutPlan = holder.view.findViewById(R.id.workoutplan) as TextView
             val availabilityTable = holder.view.findViewById(R.id.availability) as TableLayout
-            val intent = Intent()//TODO: link this intent to the next activity
+            val intent = Intent(ctx, TrainerProfileActivity::class.java)//TODO: link this intent to the next activity
 
             name.text = trainer.name
             about.text = trainer.aboutMe
