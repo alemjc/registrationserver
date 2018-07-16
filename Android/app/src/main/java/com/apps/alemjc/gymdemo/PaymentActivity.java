@@ -2,6 +2,7 @@ package com.apps.alemjc.gymdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 public class PaymentActivity extends AppCompatActivity {
 
@@ -9,5 +10,7 @@ public class PaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        setTitle("Choose Payment");
     }
 }

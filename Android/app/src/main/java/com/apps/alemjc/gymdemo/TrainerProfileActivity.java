@@ -2,6 +2,7 @@ package com.apps.alemjc.gymdemo;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class TrainerProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trainer_profile);
         setTitle("Robin");
+        ActionBar mActionBar = getSupportActionBar();
 
         mTrainerButton = (Button) findViewById(R.id.trainerButton);
         mAboutMe = (TextView) findViewById(R.id.trainer_about_me);
