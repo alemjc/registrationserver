@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TrainerProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_weight="2.5"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="Trainer Image1"
+            app:srcCompat="@mipmap/robin_baby" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/robin_duke"
+            android:contentDescription="Trainer Image2"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/robin_shirtless"
+            android:contentDescription="Trainer Image3"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/trainer_name"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_weight="1"/>
+
+ <!--   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textColor="#5042f4"
+        android:text="About Me"/>-->
+
+    <TextView
+        android:id="@+id/trainer_about_me"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/trainer_about_me" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="0dp">
+
+        <Button
+            android:id="@+id/trainerButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:theme="@style/PrimaryFlatButton"
+            android:text="@string/select_trainer"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:layout_weight="2.5">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/robin_sax"
+            android:contentDescription="Trainer Image1"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/robin_swag"
+            android:contentDescription="Trainer Image2"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/robin_fireplace"
+            android:contentDescription="Trainer Image3"/>
+    </LinearLayout>
+</LinearLayout>
