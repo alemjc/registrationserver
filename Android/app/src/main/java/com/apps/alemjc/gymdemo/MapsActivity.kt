@@ -33,7 +33,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                             LatLng(40.7913549, -74.3272861))
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
