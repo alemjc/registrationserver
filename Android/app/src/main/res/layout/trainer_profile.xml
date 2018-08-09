@@ -35,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/aboutme"
                 android:textAppearance="@android:style/TextAppearance.Material.Small"/>
-
         </LinearLayout>
     </LinearLayout>
 

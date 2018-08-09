@@ -27,6 +27,13 @@
     <string name="trainer_about_me">I like working out.</string>
     <string name="select_trainer">Workout with me!</string>
 
+    <!-- Strings related to payment -->
+    <string name="confirm_request">Confirm training</string>
+    <string name="failed_token_client">Client failed to retrieve token from server</string>
+    <string name="BraintreeFragment_initialized">BraintreeFragment is ready to use</string>
+    <string name="issues_with_authorization">There was an issue with your authorization settings</string>
+    <string name="failed_token_server">Fail to retrieve client token</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -4,9 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaymentActivity">
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context="com.apps.alemjc.gymdemo.PaymentActivity">
 
-    <ListView>
-
-    </ListView>
+    <Button
+        android:id = "@+id/confirm_request"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:background="@color/colorAccent"
+        android:text="@string/confirm_request"
+        android:textColor="@color/colorBlack"
+        />
 </android.support.constraint.LinearLayout>

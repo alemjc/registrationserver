@@ -101,7 +101,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 == PackageManager.PERMISSION_GRANTED){
 
             val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-            val yourLocation = MarkerOptions().position(LatLng(location.latitude, location.longitude))
+//            val yourLocation = MarkerOptions().position(LatLng(location.latitude, location.longitude))
+            val yourLocation = MarkerOptions().position(SAMPLE_DATA[0])
             val gymOne = MarkerOptions().position(SAMPLE_DATA[0])
             val gymTwo = MarkerOptions().position(SAMPLE_DATA[1])
             val gymThree = MarkerOptions().position(SAMPLE_DATA[2])

@@ -29,6 +29,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:15.0.1'
     implementation 'com.google.maps.android:android-maps-utils:0.5'
     implementation 'com.edmodo:rangebar:1.0.0'
+    implementation 'com.braintreepayments.api:braintree:2.+'
+    implementation 'com.braintreepayments.api:drop-in:3.+'
+    implementation 'com.intuit.sdp:sdp-android:1.0.3'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'

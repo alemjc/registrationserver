@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorPrimaryLight">#C5CAE9</color>
     <color name="colorAccent">#448AFF</color>
+    <color name="colorBackground">#DFD1D0</color>
+    <color name="colorBlack">#000000</color>
     <color name="primaryText">#212121</color>
     <color name="secondaryText">#757575</color>
     <color name="dividerColor">#BDBDBD</color>
