@@ -33,6 +33,7 @@
     <string name="BraintreeFragment_initialized">BraintreeFragment is ready to use</string>
     <string name="issues_with_authorization">There was an issue with your authorization settings</string>
     <string name="failed_token_server">Fail to retrieve client token</string>
+    <string name="label_buy_now">Buy Now</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

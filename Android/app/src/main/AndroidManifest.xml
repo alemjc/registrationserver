@@ -55,6 +55,10 @@
             android:label="@string/title_activity_trainers"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".PaymentActivity"
+            android:label="PaymentActivity"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
             android:theme="@style/AppTheme.NoActionBar" />

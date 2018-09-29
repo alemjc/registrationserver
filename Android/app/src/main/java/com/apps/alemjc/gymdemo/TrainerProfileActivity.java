@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class TrainerProfileActivity extends AppCompatActivity {
 
@@ -38,29 +39,31 @@ public class TrainerProfileActivity extends AppCompatActivity {
             // Open AlertDialog to confirm payment
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                alertDialogBuilder.setTitle("Train with Robin?");
-
-                //Using dialog layout. I think it will be easier to customize the dialogue this way
-                LayoutInflater inflater = getLayoutInflater();
-
-                alertDialogBuilder.setView(inflater.inflate(R.layout.dialog_confirm_trainer, null))
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //test Toast
-                                Toast.makeText(context, "You did it =)", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.cancel();
-                            }
-                        });
-                AlertDialog alertDialog = alertDialogBuilder.create();
-
-                alertDialog.show();
+                Intent intent = new Intent(context, PaymentActivity.class);
+                startActivity(intent);
+//                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+//                alertDialogBuilder.setTitle("Train with Robin?");
+//
+//                //Using dialog layout. I think it will be easier to customize the dialogue this way
+//                LayoutInflater inflater = getLayoutInflater();
+//
+//                alertDialogBuilder.setView(inflater.inflate(R.layout.dialog_confirm_trainer, null))
+//                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialogInterface, int i) {
+//                                //test Toast
+//                                Toast.makeText(context, "You did it =)", Toast.LENGTH_SHORT).show();
+//                            }
+//                        })
+//                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialogInterface, int i) {
+//                                dialogInterface.cancel();
+//                            }
+//                        });
+//                AlertDialog alertDialog = alertDialogBuilder.create();
+//
+//                alertDialog.show();
             }
         });
 

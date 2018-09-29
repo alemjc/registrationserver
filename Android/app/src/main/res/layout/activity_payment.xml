@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +8,32 @@
     android:background="@color/colorBackground"
     tools:context="com.apps.alemjc.gymdemo.PaymentActivity">
 
+    <com.braintreepayments.cardform.view.SupportedCardTypesView
+        android:id="@+id/supported_card_types"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp" />
+
+    <com.braintreepayments.cardform.view.CardForm
+        android:id="@+id/card_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/bt_margin"
+        tools:ignore="PrivateResource" />
+
     <Button
-        android:id = "@+id/confirm_request"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
+        android:id="@+id/btnBuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
         android:background="@color/colorAccent"
-        android:text="@string/confirm_request"
-        android:textColor="@color/colorBlack"
-        />
-</android.support.constraint.LinearLayout>
+        android:text="@string/label_buy_now"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
