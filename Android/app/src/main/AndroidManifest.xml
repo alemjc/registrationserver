@@ -46,6 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FilterActivity"
+            android:theme="@style/AppTheme"
+            android:label="Filter" />
         <activity
             android:name=".WorkoutActivity"
             android:label="@string/title_activity_main"
