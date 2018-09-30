@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
 
+import com.apps.alemjc.gymdemo.Filter.FilterActivity;
+
 /**
  * A login screen that offers login via email/password.
  */

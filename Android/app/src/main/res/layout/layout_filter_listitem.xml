@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:id="@+id/relLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <!--<ImageView-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:src="@drawable/ic_ellipses"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:id="@+id/ivEllipses"/>-->
+
+        </RelativeLayout>
+
+        <com.apps.alemjc.gymdemo.Utils.SquareImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="332dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop" />
+
+
+        <RelativeLayout
+            android:id="@+id/relLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="127dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorWhite"
+            android:padding="20dp">
+
+            <!--<TextView-->
+                <!--android:id="@+id/image_likes"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="61dp"-->
+                <!--android:text="Liked by Mitch, Tom, Mohammed and 30 others"-->
+                <!--android:textColor="@color/colorBlack"-->
+                <!--android:textSize="18sp" />-->
+
+            <TextView
+                android:id="@+id/image_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mitch.tabian moutains #earthporn #mountains"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/image_comments_link"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/image_caption"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:text="View all 3 comments"-->
+                <!--android:textColor="@color/colorGrey"-->
+                <!--android:textSize="18sp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/image_time_posted"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/image_comments_link"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:text="3 DAYS AGO"-->
+                <!--android:textColor="@color/colorGrey"-->
+                <!--android:textSize="18sp" />-->
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
