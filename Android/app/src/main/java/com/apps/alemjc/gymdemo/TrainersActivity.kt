@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.apps.alemjc.gymdemo.Profile.TrainerProfileActivity
 
-import kotlinx.android.synthetic.main.activity_trainers.*
 import kotlinx.android.synthetic.main.content_trainers.*
 import java.text.SimpleDateFormat
 import java.util.*

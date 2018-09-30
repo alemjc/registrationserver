@@ -108,8 +108,6 @@ public class FilterFeedListAdapter extends ArrayAdapter<Photo> {
         //set the profile image
         final ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(getItem(position).getImage_path(), holder.image);
-//        imageLoader.displayImage("drawable://" +R.drawable.robin_baby, holder.image);
-
 
 //        if(reachedEndOfList(position)){
 //            loadMoreData();

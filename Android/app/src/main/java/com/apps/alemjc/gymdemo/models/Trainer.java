@@ -1,6 +1,7 @@
 package com.apps.alemjc.gymdemo.models;
 
-public class Trainer extends User {
+import android.os.Parcelable;
 
+public class Trainer extends User {
 
 }

@@ -73,6 +73,8 @@ public class FilterFragment extends Fragment {
         photo3.setTags("Adding tags");
         photo3.setImage_path("drawable://"+R.drawable.robin_shirtless);
         photo3.setPhoto_id("3");
+
+        mPhotos.add(photo3);
         displayPhotos();
 
     }
