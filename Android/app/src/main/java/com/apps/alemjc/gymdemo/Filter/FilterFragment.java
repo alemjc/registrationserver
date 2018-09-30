@@ -80,12 +80,6 @@ public class FilterFragment extends Fragment {
     private void displayPhotos(){
         if(mPhotos != null){
             Log.d(TAG, "getPhotos: displaying photos");
-//            Collections.sort(mPhotos, new Comparator<Photo>() {
-//                @Override
-//                public int compare(Photo o1, Photo o2) {
-//                    return o2.getDate_created().compareTo(o1.getDate_created());
-//                }
-//            });
 
             mAdapter = new FilterFeedListAdapter(getActivity(), R.layout.layout_filter_listitem, mPhotos);
             mListView.setAdapter(mAdapter);

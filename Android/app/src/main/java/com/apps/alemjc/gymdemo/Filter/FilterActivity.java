@@ -54,17 +54,11 @@ public class FilterActivity extends AppCompatActivity{
 
     private void setupViewPager(){
             SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
-//            adapter.addFragment(new CameraFragment()); //index 0
             adapter.addFragment(new FilterFragment()); //index 1
-//            adapter.addFragment(new MessagesFragment()); //index 2
             mViewPager.setAdapter(adapter);
 
             TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(mViewPager);
-//
-//            tabLayout.getTabAt(0).setIcon(R.drawable.ic_camera);
-//            tabLayout.getTabAt(1).setIcon(R.drawable.ic_instagram_black);
-//            tabLayout.getTabAt(2).setIcon(R.drawable.ic_arrow);
     }
     @Override
     public void onStart() {
