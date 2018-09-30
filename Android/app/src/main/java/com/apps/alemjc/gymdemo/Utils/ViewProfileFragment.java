@@ -82,14 +82,14 @@ public class ViewProfileFragment extends Fragment {
         mDescription = (TextView) view.findViewById(R.id.description);
 //        mProfilePhoto = (CircleImageView) view.findViewById(R.id.profile_photo);
         mPosts = (TextView) view.findViewById(R.id.tvPosts);
-        mFollowers = (TextView) view.findViewById(R.id.tvFollowers);
-        mFollowing = (TextView) view.findViewById(R.id.tvFollowing);
+//        mFollowers = (TextView) view.findViewById(R.id.tvFollowers);
+//        mFollowing = (TextView) view.findViewById(R.id.tvFollowing);
 //        mProgressBar = (ProgressBar) view.findViewById(R.id.profileProgressBar);
         gridView = (GridView) view.findViewById(R.id.gridView);
 //        bottomNavigationView = (BottomNavigationViewEx) view.findViewById(R.id.bottomNavViewBar);
 //        mFollow = (TextView) view.findViewById(R.id.follow);
 //        mUnfollow = (TextView) view.findViewById(R.id.unfollow);
-        editProfile  = (TextView) view.findViewById(R.id.textEditProfile);
+//        editProfile  = (TextView) view.findViewById(R.id.textEditProfile);
 //        mBackArrow = (ImageView) view.findViewById(R.id.backArrow);
         mContext = getActivity();
         Log.d(TAG, "onCreateView: stared.");
@@ -105,26 +105,26 @@ public class ViewProfileFragment extends Fragment {
         }
 
 
-        isFollowing();
-        getFollowingCount();
-        getFollowersCount();
+//        isFollowing();
+//        getFollowingCount();
+//        getFollowersCount();
         getPostsCount();
 
 
         //setupGridView();
 
 
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: navigating to " + mContext.getString(R.string.edit_profile_fragment));
-                Intent intent = new Intent(getActivity(), AccountSettingsActivity.class);
-                intent.putExtra(getString(R.string.calling_activity), getString(R.string.profile_activity));
-                startActivity(intent);
-                getActivity();
-//                getActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-            }
-        });
+//        editProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d(TAG, "onClick: navigating to " + mContext.getString(R.string.edit_profile_fragment));
+//                Intent intent = new Intent(getActivity(), AccountSettingsActivity.class);
+//                intent.putExtra(getString(R.string.calling_activity), getString(R.string.profile_activity));
+//                startActivity(intent);
+//                getActivity();
+////                getActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+//            }
+//        });
 
         return view;
     }
@@ -139,16 +139,16 @@ public class ViewProfileFragment extends Fragment {
         //get the users profile photos
     }
 
-    private void isFollowing(){
-        Log.d(TAG, "isFollowing: checking if following this users.");
-        setUnfollowing();
+//    private void isFollowing(){
+//        Log.d(TAG, "isFollowing: checking if following this users.");
+//        setUnfollowing();
+//
+//    }
 
-    }
-
-    private void getFollowersCount(){
-        mFollowersCount = 0;
-
-    }
+//    private void getFollowersCount(){
+//        mFollowersCount = 0;
+//
+//    }
 
     private void getFollowingCount(){
         mFollowingCount = 0;
@@ -161,23 +161,23 @@ public class ViewProfileFragment extends Fragment {
 
     private void setFollowing(){
         Log.d(TAG, "setFollowing: updating UI for following this user");
-        mFollow.setVisibility(View.GONE);
-        mUnfollow.setVisibility(View.VISIBLE);
-        editProfile.setVisibility(View.GONE);
+//        mFollow.setVisibility(View.GONE);
+//        mUnfollow.setVisibility(View.VISIBLE);
+//        editProfile.setVisibility(View.GONE);
     }
 
     private void setUnfollowing(){
         Log.d(TAG, "setFollowing: updating UI for unfollowing this user");
-        mFollow.setVisibility(View.VISIBLE);
-        mUnfollow.setVisibility(View.GONE);
-        editProfile.setVisibility(View.GONE);
+//        mFollow.setVisibility(View.VISIBLE);
+//        mUnfollow.setVisibility(View.GONE);
+//        editProfile.setVisibility(View.GONE);
     }
 
     private void setCurrentUsersProfile(){
         Log.d(TAG, "setFollowing: updating UI for showing this user their own profile");
-        mFollow.setVisibility(View.GONE);
-        mUnfollow.setVisibility(View.GONE);
-        editProfile.setVisibility(View.VISIBLE);
+//        mFollow.setVisibility(View.GONE);
+//        mUnfollow.setVisibility(View.GONE);
+//        editProfile.setVisibility(View.VISIBLE);
     }
 
     private void setupImageGrid(final ArrayList<Photo> photos){
@@ -239,8 +239,8 @@ public class ViewProfileFragment extends Fragment {
         mWebsite.setText(settings.getWebsite());
         mDescription.setText(settings.getDescription());
         mPosts.setText(String.valueOf(settings.getPosts()));
-        mFollowing.setText(String.valueOf(settings.getFollowing()));
-        mFollowers.setText(String.valueOf(settings.getFollowers()));
+//        mFollowing.setText(String.valueOf(settings.getFollowing()));
+//        mFollowers.setText(String.valueOf(settings.getFollowers()));
         mProgressBar.setVisibility(View.GONE);
 
         mBackArrow.setOnClickListener(new View.OnClickListener() {

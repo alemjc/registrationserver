@@ -66,7 +66,7 @@ public class ViewPostFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_post, container, false);
         mPostImage = (SquareImageView) view.findViewById(R.id.post_image);
         mBackArrow = (ImageView) view.findViewById(R.id.backArrow);
-        mBackLabel = (TextView) view.findViewById(R.id.tvBackLabel);git
+        mBackLabel = (TextView) view.findViewById(R.id.tvBackLabel);
         mCaption = (TextView) view.findViewById(R.id.image_caption);
         mUsername = (TextView) view.findViewById(R.id.username);
         mTimestamp = (TextView) view.findViewById(R.id.image_time_posted);

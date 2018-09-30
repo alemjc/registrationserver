@@ -29,6 +29,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import com.apps.alemjc.gymdemo.R;
+import com.apps.alemjc.gymdemo.Profile.TrainerProfileActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import com.apps.alemjc.gymdemo.models.User;
 import com.apps.alemjc.gymdemo.models.Trainer;
@@ -109,6 +110,19 @@ public class FilterFeedListAdapter extends ArrayAdapter<Photo> {
         final ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(getItem(position).getImage_path(), holder.image);
 
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating to profile of: " +
+                        holder.user.getUsername());
+
+                Intent intent = new Intent(mContext, TrainerProfileActivity.class);
+                intent.putExtra(mContext.getString(R.string.calling_activity),
+                        mContext.getString(R.string.home_activity));
+                intent.putExtra(mContext.getString(R.string.intent_user), holder.user);
+                mContext.startActivity(intent);
+            }
+        });
 //        if(reachedEndOfList(position)){
 //            loadMoreData();
 //        }

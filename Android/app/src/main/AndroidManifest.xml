@@ -65,7 +65,9 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Profile.TrainerProfileActivity" />
+        <activity android:name=".Profile.TrainerProfileActivity"
+            android:label="TrainerProfileActivity"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".Share.ShareActivity"
             android:theme="@style/AppTheme"
             android:label="ShareActivity"/>
