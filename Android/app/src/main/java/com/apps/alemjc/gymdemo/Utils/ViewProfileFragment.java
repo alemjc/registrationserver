@@ -150,27 +150,9 @@ public class ViewProfileFragment extends Fragment {
 //
 //    }
 
-    private void getFollowingCount(){
-        mFollowingCount = 0;
-    }
-
     private void getPostsCount(){
         mPostsCount = 0;
 
-    }
-
-    private void setFollowing(){
-        Log.d(TAG, "setFollowing: updating UI for following this user");
-//        mFollow.setVisibility(View.GONE);
-//        mUnfollow.setVisibility(View.VISIBLE);
-//        editProfile.setVisibility(View.GONE);
-    }
-
-    private void setUnfollowing(){
-        Log.d(TAG, "setFollowing: updating UI for unfollowing this user");
-//        mFollow.setVisibility(View.VISIBLE);
-//        mUnfollow.setVisibility(View.GONE);
-//        editProfile.setVisibility(View.GONE);
     }
 
     private void setCurrentUsersProfile(){
@@ -225,9 +207,6 @@ public class ViewProfileFragment extends Fragment {
 
 
     private void setProfileWidgets(UserSettings userSettings){
-        //Log.d(TAG, "setProfileWidgets: setting widgets with data retrieving from firebase database: " + userSettings.toString());
-        //Log.d(TAG, "setProfileWidgets: setting widgets with data retrieving from firebase database: " + userSettings.getSettings().getUsername());
-
 
         //User user = userSettings.getUser();
         UserAccountSettings settings = userSettings.getSettings();

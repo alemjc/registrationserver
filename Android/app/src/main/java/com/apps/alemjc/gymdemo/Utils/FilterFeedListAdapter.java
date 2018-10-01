@@ -64,7 +64,7 @@ public class FilterFeedListAdapter extends ArrayAdapter<Photo> {
     static class ViewHolder{
         CircleImageView mprofileImage;
         String likesString;
-        TextView name, timeDetla, caption, likes, comments;
+        TextView name, timeDetla, caption, likes, comments, reviews, cost;
         SquareImageView image;
         ImageView heartRed, heartWhite, comment;
 
@@ -93,6 +93,8 @@ public class FilterFeedListAdapter extends ArrayAdapter<Photo> {
 //            holder.mprofileImage = (CircleImageView) convertView.findViewById(R.id.profile_photo);
             holder.photo = getItem(position);
             holder.users = new StringBuilder();
+            holder.reviews = (TextView) convertView.findViewById(R.id.trainer_reviews);
+            holder.cost = (TextView) convertView.findViewById(R.id.cost);
 
             convertView.setTag(holder);
 
@@ -100,11 +102,19 @@ public class FilterFeedListAdapter extends ArrayAdapter<Photo> {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        //get the current users username (need for checking likes string)
-        getCurrentUsername();
+//        //get the current users username (need for checking likes string)
+//        getCurrentUsername();
 
         //set the caption
         holder.caption.setText(getItem(position).getCaption());
+
+        //set reviews
+
+        //set cost
+        holder.cost.setText(getItem(position).getCost());
+
+        //set reviews
+        holder.reviews.setText(getItem(position).getReviews());
 
         //set the profile image
         final ImageLoader imageLoader = ImageLoader.getInstance();

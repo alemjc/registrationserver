@@ -31,9 +31,10 @@
         <com.apps.alemjc.gymdemo.Utils.SquareImageView
             android:id="@+id/post_image"
             android:layout_width="match_parent"
-            android:layout_height="332dp"
+            android:layout_height="397dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
             android:scaleType="centerCrop" />
 
 
@@ -47,40 +48,44 @@
             android:padding="20dp">
 
             <!--<TextView-->
-                <!--android:id="@+id/image_likes"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="61dp"-->
-                <!--android:text="Liked by Mitch, Tom, Mohammed and 30 others"-->
-                <!--android:textColor="@color/colorBlack"-->
-                <!--android:textSize="18sp" />-->
+            <!--android:id="@+id/image_likes"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="61dp"-->
+            <!--android:text="Liked by Mitch, Tom, Mohammed and 30 others"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:textSize="18sp" />-->
 
             <TextView
                 android:id="@+id/image_caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="mitch.tabian moutains #earthporn #mountains"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="mitch.tabian moutains"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_20sdp" />
+
+            <TextView
+                android:id="@+id/trainer_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/cost"
+                android:layout_marginEnd="25dp"
+                android:text="Just here for checking"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
-            <!--<TextView-->
-                <!--android:id="@+id/image_comments_link"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_below="@+id/image_caption"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:text="View all 3 comments"-->
-                <!--android:textColor="@color/colorGrey"-->
-                <!--android:textSize="18sp" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/image_time_posted"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_below="@+id/image_comments_link"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:text="3 DAYS AGO"-->
-                <!--android:textColor="@color/colorGrey"-->
-                <!--android:textSize="18sp" />-->
+            <TextView
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/image_caption"
+                android:layout_marginBottom="13dp"
+                android:text="default text"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
 
         </RelativeLayout>
 

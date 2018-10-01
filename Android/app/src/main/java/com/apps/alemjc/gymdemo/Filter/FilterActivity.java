@@ -54,7 +54,7 @@ public class FilterActivity extends AppCompatActivity{
 
     private void setupViewPager(){
             SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
-            adapter.addFragment(new FilterFragment()); //index 1
+            adapter.addFragment(new TrainerListFragment()); //index 1
             mViewPager.setAdapter(adapter);
 
             TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
