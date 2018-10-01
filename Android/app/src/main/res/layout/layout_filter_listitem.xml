@@ -72,7 +72,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/cost"
                 android:layout_marginEnd="25dp"
-                android:text="Just here for checking"
+                android:text="5.0"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
 
@@ -86,6 +86,15 @@
                 android:text="default text"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/trainer_reviews_icon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignBottom="@+id/trainer_reviews"
+                android:layout_toStartOf="@+id/trainer_reviews"
+                android:src="@drawable/ic_review" />
+
 
         </RelativeLayout>
 
